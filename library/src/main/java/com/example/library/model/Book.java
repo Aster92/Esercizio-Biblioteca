@@ -1,6 +1,6 @@
 package com.example.library.model;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -36,7 +36,7 @@ public class Book {
 	private String title;
 	
 	@Column(nullable= false)
-    private Date publicationDate;
+    private LocalDate publicationDate;
 	
 	@ManyToMany
     @JoinTable(

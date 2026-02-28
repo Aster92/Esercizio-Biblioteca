@@ -142,3 +142,8 @@ INSERT INTO loans (id, member_id, book_id, loan_date, loan_returned_date, is_dam
 INSERT INTO loans (id, member_id, book_id, loan_date, loan_returned_date, is_damaged) VALUES (18, 4, 18, '2024-04-10', '2024-04-25', false);
 INSERT INTO loans (id, member_id, book_id, loan_date, loan_returned_date, is_damaged) VALUES (19, 5, 19, '2024-04-15', '2024-04-30', true);
 INSERT INTO loans (id, member_id, book_id, loan_date, loan_returned_date, is_damaged) VALUES (20, 6, 20, '2024-04-20', '2024-05-05', false);
+INSERT INTO loans (id, member_id, book_id, loan_date, loan_returned_date, is_damaged) VALUES (21, 1, 3, '2024-05-01', null, false);
+INSERT INTO loans (id, member_id, book_id, loan_date, loan_returned_date, is_damaged) VALUES (22, 4, 6, '2024-05-05', null, false);
+INSERT INTO loans (id, member_id, book_id, loan_date, loan_returned_date, is_damaged) VALUES (23, 7, 9, '2024-05-10', null, false);
+INSERT INTO loans (id, member_id, book_id, loan_date, loan_returned_date, is_damaged) VALUES (24, 10, 12, '2024-05-15', null, false);
+INSERT INTO loans (id, member_id, book_id, loan_date, loan_returned_date, is_damaged) VALUES (25, 13, 15, '2024-05-20', null, false);

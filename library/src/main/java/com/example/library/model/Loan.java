@@ -1,6 +1,6 @@
 package com.example.library.model;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -36,10 +36,9 @@ public class Loan {
 	private Book book;
 	
 	@Column(nullable= false)
-	private Date loanDate;
+	private LocalDateTime loanDate;
 	
-	@Column(nullable= false)
-	private Date loanReturnedDate;
+	private LocalDateTime loanReturnedDate;
 	
 	@Column(nullable=false)
 	private boolean isDamaged= false;

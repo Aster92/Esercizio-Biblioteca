@@ -1,6 +1,6 @@
 package com.example.library.model;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -29,7 +29,7 @@ public class Member extends Person {
     private Long id;
 	
 	@Column(nullable=false)
-	private Date registrationDate;
+	private LocalDateTime registrationDate;
 	
 	@OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
 	@ToString.Exclude

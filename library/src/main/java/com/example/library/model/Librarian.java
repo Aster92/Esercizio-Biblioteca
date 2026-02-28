@@ -1,6 +1,6 @@
 package com.example.library.model;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -32,9 +32,9 @@ public class Librarian extends Person {
 		private Library library;
 		
 		@Column(nullable=false)
-		private Date hiringDate;
+		private LocalDate hiringDate;
 	
-		private Date dischargeDate;
+		private LocalDate dischargeDate;
 		
 		
 
