@@ -2,6 +2,8 @@ package com.example.library.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,14 +26,15 @@ import lombok.ToString;
 public class Publisher {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-	
-	@Column(nullable=false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	@Column(nullable = false)
 	private String name;
-	
+
 	@OneToMany(mappedBy = "publisher", cascade = CascadeType.ALL)
 	@ToString.Exclude
+	@JsonIgnoreProperties("publisher")
 	private List<Book> books;
-	
+
 }

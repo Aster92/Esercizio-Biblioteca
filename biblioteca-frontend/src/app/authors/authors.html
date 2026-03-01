@@ -1,0 +1,10 @@
+<p>authors works!</p>
+
+<div>
+  <h2>Authors</h2>
+  <ul>
+    @for (author of authors; track author.id) {
+      <li>{{ author.name }} - {{ author.surname }}</li>
+    }
+  </ul>
+</div>

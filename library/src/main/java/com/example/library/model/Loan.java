@@ -2,6 +2,10 @@ package com.example.library.model;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,10 +33,12 @@ public class Loan {
 	
 	@ManyToOne
 	@JoinColumn(nullable= false, name= "member_id")
+	@JsonIgnoreProperties("loans")
 	private Member member;
 	
 	@ManyToOne
 	@JoinColumn(nullable= false, name= "book_id")
+	@JsonIgnoreProperties("loans")
 	private Book book;
 	
 	@Column(nullable= false)

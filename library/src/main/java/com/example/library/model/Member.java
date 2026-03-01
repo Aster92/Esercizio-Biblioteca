@@ -3,6 +3,8 @@ package com.example.library.model;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,6 +35,7 @@ public class Member extends Person {
 	
 	@OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
 	@ToString.Exclude
+	@JsonIgnoreProperties("member")
 	private List<Loan> loans;
 	
 	@Column(nullable=false)

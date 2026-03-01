@@ -2,6 +2,8 @@ package com.example.library.model;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,6 +31,7 @@ public class Librarian extends Person {
 		
 		@ManyToOne
 		@JoinColumn(nullable=false, name= "library_id")
+		@JsonIgnoreProperties("librarians")
 		private Library library;
 		
 		@Column(nullable=false)

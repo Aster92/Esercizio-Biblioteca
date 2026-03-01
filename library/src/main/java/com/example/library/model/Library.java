@@ -2,6 +2,8 @@ package com.example.library.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,35 +27,37 @@ import lombok.ToString;
 @ToString
 @Table(name = "libraries")
 public class Library {
-	
+
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-	
-	@Column(nullable=false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	@Column(nullable = false)
 	private String name;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private String address;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private String city;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private String province;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private String state;
-	
+
 	@ManyToMany
-    @JoinTable(
-    		name= "library_books", 
-    		joinColumns= @JoinColumn(name="library_id"), 
-    		inverseJoinColumns= @JoinColumn(name= "book_id"))
-    private List<Book> books;
-    
-    @OneToMany(mappedBy = "library", cascade = CascadeType.ALL)
-    @ToString.Exclude
-    private List<Librarian> librarians;
-	
+	@JoinTable(
+			name = "library_books",
+			joinColumns = @JoinColumn(name = "library_id"),
+			inverseJoinColumns = @JoinColumn(name = "book_id"))
+	@JsonIgnoreProperties("library")
+	private List<Book> books;
+
+	@OneToMany(mappedBy = "library", cascade = CascadeType.ALL)
+	@ToString.Exclude
+	@JsonIgnoreProperties("library")
+	private List<Librarian> librarians;
+
 }

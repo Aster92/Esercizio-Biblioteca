@@ -1,0 +1,11 @@
+<p>publisher works!</p>
+<p>Numero publishers: {{ publishers.length }}</p>
+
+<div>
+  <h2>Publishers</h2>
+  <ul>
+    @for (publisher of publishers; track publisher.id) {
+      <li>{{ publisher.name }}</li>
+    }
+  </ul>
+</div>

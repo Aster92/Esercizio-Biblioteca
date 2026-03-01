@@ -3,6 +3,8 @@ package com.example.library.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -43,10 +45,12 @@ public class Book {
     		name= "book_authors", 
     		joinColumns= @JoinColumn(name="book_id"), 
     		inverseJoinColumns= @JoinColumn(name= "author_id"))
+	@JsonIgnoreProperties("books")
 	private List<Author> authors;
 	
 	@ManyToOne
     @JoinColumn(nullable= false, name= "publisher_id")
+	@JsonIgnoreProperties("books")
     private Publisher publisher;
 	
 	@Column(nullable=false, unique = true)
@@ -54,10 +58,12 @@ public class Book {
 	
 	@ManyToMany(mappedBy="books", cascade = CascadeType.ALL)
 	@ToString.Exclude
+	@JsonIgnoreProperties("books")
 	private List<Library> library;
 	
 	@OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
 	@ToString.Exclude
+	@JsonIgnoreProperties("book")
 	private List<Loan> loans;
 	
 }

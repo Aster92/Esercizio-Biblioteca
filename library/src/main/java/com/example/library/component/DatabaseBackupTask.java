@@ -1,4 +1,4 @@
-package com.esempio.biblioteca.component;
+/*package com.example.library.component;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -13,6 +13,7 @@ public class DatabaseBackupTask {
 	
 	@Scheduled(fixedRate= 30000)
 	public void backup() {
-		jdbcTemplate.execute("SCRIPT DATA TO 'src/main/resources/data.sql'");
+		jdbcTemplate.execute("SCRIPT TO './src/main/resources/data.sql'");
 	}
 }
+*/

@@ -1,0 +1,10 @@
+<p>librarians works!</p>
+
+<div>
+  <h2>Librarians</h2>
+  <ul>
+    @for (librarian of librarians; track librarian.id) {
+      <li>{{ librarian.name }} - {{ librarian.surname }}</li>
+    }
+  </ul>
+</div>

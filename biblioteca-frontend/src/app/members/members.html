@@ -1,0 +1,10 @@
+<p>members works!</p>
+
+<div>
+  <h2>Members</h2>
+  <ul>
+    @for (member of members; track member.id) {
+      <li>{{ member.name }} - {{ member.surname }}</li>
+    }
+  </ul>
+</div>

@@ -2,6 +2,8 @@ package com.example.library.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -35,5 +37,6 @@ public class Author {
 	
 	@ManyToMany(mappedBy="authors", cascade = CascadeType.ALL)
 	@ToString.Exclude
+	@JsonIgnoreProperties("authors")
 	private List<Book> books;
 }

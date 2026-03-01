@@ -1,0 +1,10 @@
+<p>loans works!</p>
+
+<div>
+  <h2>Loans</h2>
+  <ul>
+    @for (loan of loans; track loan.id) {
+      <li>{{ loan.book.title }} - {{ loan.member.surname }}</li>
+    }
+  </ul>
+</div>

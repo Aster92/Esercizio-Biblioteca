@@ -1,0 +1,16 @@
+<p>books works!</p>
+
+<div>
+  <h2>Books</h2>
+  <ul>
+    @for (book of books; track book.id) {
+      <li>{{ book.title }} - {{ book.publisher.name }}
+        <ul>
+            @for (author of book.authors; track author.id) {
+                <li>{{ author.name }} - {{ author.surname }}</li>
+            }
+        </ul>
+      </li>
+    }
+  </ul>
+</div>
