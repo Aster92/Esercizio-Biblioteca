@@ -34,5 +34,8 @@ Esercizio-Biblioteca/
 - library/               # Spring Boot backend
 - biblioteca-frontend/   # Angular frontend
 - Esercizio-database.pdf # Original exercise requirements
+
+
 Notes
+
 This is a personal practice project, built to consolidate skills in Spring Boot and Angular after professional experience as a backend Java developer.
